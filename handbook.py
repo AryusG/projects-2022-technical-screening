@@ -110,7 +110,7 @@ def is_unlocked(courses_list, target_course):
 
     # DATA CLEANING with Substitutions 
     prereq = substitution_clean(courses_list, prereq)
-    print(prereq)
+    # print(prereq)
 
     # Substitute "completion of \d\d units of credit" with True or False
     if re.search(r"(C|c)ompletion of \d?\d units of credit", prereq):
@@ -120,14 +120,14 @@ def is_unlocked(courses_list, target_course):
     if re.search(r"\d?\d units of credit in level \d COMP courses", prereq):
         prereq = uoc_levels_clean(credits_dict, prereq)
     
-    print(prereq)
+    # print(prereq)
     
     return eval(prereq)
 
     
-courses_list = ["COMP1234", "COMP5634", "COMP4834"]
-target_course = 'COMP9491'
-print(is_unlocked(courses_list=courses_list, target_course=target_course))
+# courses_list = ["COMP1911", "MTRN2500"]
+# target_course = 'COMP2121'
+# print(is_unlocked(courses_list=courses_list, target_course=target_course))
 
 
 
